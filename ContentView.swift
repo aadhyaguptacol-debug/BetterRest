@@ -44,6 +44,51 @@ struct ContentView: View {
             return nil
         }
     }
+     var body: some View {
+        NavigationStack {
+            Form {
+
+                // Recommended Bedtime
+
+                Section {
+                    VStack(spacing: 12) {
+
+                        Text("YOUR RECOMMENDED BEDTIME")
+                            .font(.headline)
+                            .foregroundStyle(.secondary)
+
+                        if let bedtime = recommendedBedtime {
+                            Text(
+                                bedtime.formatted(
+                                    date: .omitted,
+                                    time: .shortened
+                                )
+                            )
+                            .font(
+                                .system(
+                                    size: 48,
+                                    weight: .bold,
+                                    design: .rounded
+                                )
+                            )
+                            .foregroundStyle(.blue)
+                            .minimumScaleFactor(0.6)
+                            .lineLimit(1)
+
+                        } else {
+                            Text("Unable to calculate")
+                                .font(.title2)
+                                .foregroundStyle(.red)
+                        }
+
+                        Text("Your ideal time to go to sleep")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 25)
+                }
+
     
 
   
