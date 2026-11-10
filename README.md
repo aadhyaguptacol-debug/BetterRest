@@ -17,7 +17,6 @@ Core ML — Apple's machine learning framework used for on-device predictions.
 Xcode / iOS SDK — Primary development environment and toolchain.
 
 
-
 ✨ Features
 
 Smart Bedtime Prediction: Instant calculation of optimal sleep times using a trained machine learning model.
@@ -28,9 +27,6 @@ Reactive Interface: Seamless UI updates as parameters change in real-time.
 
 Lightweight & Fast: Runs entirely on-device with zero network latency or privacy concerns.
 
-🚀 Getting Started
-
-
 
 📂 Project Structure
 
@@ -40,8 +36,3 @@ BetterRest/
 ├── BetterRest.mlmodel    # Core ML model for sleep prediction
 └── Assets.xcassets/      # App icons and visual resources
 
-
-
-📄 License
-
-Distributed under the MIT License. See LICENSE for more information.
