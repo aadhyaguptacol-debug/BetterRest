@@ -88,6 +88,53 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 25)
                 }
+                
+            Section("Wake Up Time") {
+                    DatePicker(
+                        "When do you want to wake up?",
+                        selection: $wakeUp,
+                        displayedComponents: .hourAndMinute
+                    )
+                }
+
+              
+
+                Section("Sleep Amount") {
+                    Stepper(
+                        "\(sleepAmount.formatted()) hours",
+                        value: $sleepAmount,
+                        in: 4...12,
+                        step: 0.25
+                    )
+                }
+
+               
+
+                Section("Daily Coffee Intake") {
+
+                    Picker(
+                        "Number of cups",
+                        selection: $coffeeAmount
+                    ) {
+                        ForEach(1...20, id: \.self) { amount in
+                            Text("\(amount) cup(s)")
+                                .tag(amount)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                }
+            }
+            .navigationTitle("BetterRest")
+        }
+    }
+}
+
+
+
+#Preview {
+    ContentView()
+}
+
 
     
 
